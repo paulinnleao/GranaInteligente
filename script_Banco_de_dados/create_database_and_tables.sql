@@ -7,6 +7,7 @@ CREATE TABLE categoria (
 	categoria_id INT GENERATED ALWAYS AS IDENTITY,
 	descricao_categoria VARCHAR(256) NOT NULL,
 	tipo_categoria NVARCHAR(MAX),
+    categoria_id_referencia INT,
 	CONSTRAINT PRIMARY KEY (categoria_id),
 	CONSTRAINT CHECK ([tipo_categoria]='receita' OR [tipo_categoria]='despesa' OR [tipo_categoria]='investimento' OR [tipo_categoria]='outro')
 );
@@ -38,27 +39,27 @@ CREATE TABLE categoria (
 CREATE TABLE cartao_de_credito (
 	cc_id INT GENERATED ALWAYS AS IDENTITY,
 	descricao_cc NVARCHAR(MAX) NOT NULL,
-	fechamento DATE NOT NULL,
-	vencimento DATE NOT NULL,
-	limite INT NOT NULL,
+	fechamento  INT NOT NULL,
+	vencimento INT NOT NULL,
+	limite NUMERIC NOT NULL,
     moeda VARCHAR(5),
-	lancamento INT NOT NULL,
-	disponivel INT NOT NULL,
+	lancamento NUMERIC NOT NULL,
+	disponivel NUMERIC NOT NULL,
 	CONSTRAINT PRIMARY KEY (cc_id)
 );
 -- Contas (Carteira e banco)
 CREATE TABLE conta (
 	conta_id INT NOT NULL,
 	descricao_conta NVARCHAR(MAX) NOT NULL,
-	saldo_inicial INT,
+	saldo_inicial NUMERIC,
 	moeda VARCHAR(5),
 	posicao INT NOT NULL,
-	cambio INT NOT NULL,
-	recebido INT NOT NULL,
-	pago INT NOT NULL,
-	saldo_atual INT,
-	receber INT,
-	pagar INT,
-	saldo_projetado INT,
+	cambio NUMERIC NOT NULL,
+	recebido NUMERIC NOT NULL,
+	pago NUMERIC NOT NULL,
+	saldo_atual NUMERIC,
+	receber NUMERIC,
+	pagar NUMERIC,
+	saldo_projetado NUMERIC,
 	CONTRAINT PRIMARY KEY (conta_id)
 );
