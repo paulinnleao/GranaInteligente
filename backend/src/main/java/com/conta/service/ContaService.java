@@ -1,10 +1,10 @@
 package com.conta.service;
 
-import com.conta.Conta;
+import com.conta.dto.ContaDTO;
 
 import java.util.List;
 
 public interface ContaService {
 
-    List<Conta> buscarConta();
+    List<ContaDTO> buscarConta() throws Exception;
 }

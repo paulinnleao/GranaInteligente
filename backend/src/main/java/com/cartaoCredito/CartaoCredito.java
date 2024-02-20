@@ -1,11 +1,15 @@
 package com.cartaoCredito;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="cartao_de_credito")
-public @Data class CartaoCredito {
+public class CartaoCredito {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

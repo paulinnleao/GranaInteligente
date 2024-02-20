@@ -1,4 +1,14 @@
 package com.categoria.dto;
 
-public class CategoriaDTO {
+import lombok.Data;
+public @Data class CategoriaDTO {
+
+    private Integer id;
+
+    private String categoria;
+
+    private String tipo;
+
+    private Integer subCategoria;
+
 }

@@ -1,11 +1,16 @@
 package com.conta;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "conta")
-public @Data class Conta {
+public class Conta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
