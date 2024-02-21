@@ -1,11 +1,15 @@
+import * as React from 'react'
+
+// 1. import `ChakraProvider` component
+import { ChakraProvider } from '@chakra-ui/react'
+
 function App() {
-  return (
-    <>
-        <div>
+    // 2. Wrap ChakraProvider at the root of your app
+    return (
+        <ChakraProvider>
             <h1>Hello World!</h1>
-        </div>
-    </>
-  )
+        </ChakraProvider>
+    )
 }
 
 export default App
