@@ -2,12 +2,13 @@ import * as React from 'react'
 
 // 1. import `ChakraProvider` component
 import { ChakraProvider } from '@chakra-ui/react'
-
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {Header} from "./components/Routes.tsx";
 function App() {
-    // 2. Wrap ChakraProvider at the root of your app
+    const router = createBrowserRouter(Header);
     return (
         <ChakraProvider>
-            <h1>Hello World!</h1>
+            <RouterProvider router={router} />
         </ChakraProvider>
     )
 }
