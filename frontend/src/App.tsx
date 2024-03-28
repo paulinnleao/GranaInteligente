@@ -1,14 +1,13 @@
-import * as React from 'react'
-
-// 1. import `ChakraProvider` component
-import { ChakraProvider } from '@chakra-ui/react'
+import {ChakraProvider} from '@chakra-ui/react'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {Header} from "./components/Routes.tsx";
+import {Header} from "./components/Site/Routes.tsx";
+import {BarNavegation} from "./components/Site/BarNavegation.tsx";
 function App() {
-    const router = createBrowserRouter(Header);
+    const router = createBrowserRouter([Header]);
     return (
         <ChakraProvider>
-            <RouterProvider router={router} />
+                <RouterProvider router={router}>
+                </RouterProvider>
         </ChakraProvider>
     )
 }
