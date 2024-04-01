@@ -1,21 +1,25 @@
 import {Box, Button} from "@chakra-ui/react";
 import {useEffect, useState} from "react";
-import {RotasProps} from "../../util/Interfaces.tsx";
+import styled from "@emotion/styled";
 
 
-export function BarNavegation ( props : RotasProps[]){
+export function BarNavegation ( {itensPagina} ){
     const [verPagina, setVerPagina] = useState<string>("");
 
     useEffect(() => {
 
+
     }, [verPagina])
+    console.log(itensPagina)
     return <Box>
-        {props.map(
-            (value, id) =>
-            <Box key={id}>
-                <Button onClick={() => setVerPagina(value.titulo)}>{value.titulo}</Button>
-            </Box>
-        )}
+        <BoxNavegation>
+            {itensPagina.map(
+                (value, id) =>
+                <Box key={id}>
+                    <Button onClick={() => setVerPagina(value.titulo)}>{value.titulo}</Button>
+                </Box>
+            )}
+        </BoxNavegation>
 
         {/*{props.barprops.map(*/}
         {/*    (value, id) =>*/}
@@ -23,3 +27,8 @@ export function BarNavegation ( props : RotasProps[]){
         {/*)}*/}
     </Box>
 }
+
+const BoxNavegation = styled(Box)`
+    display: flex;
+    gap: 0.5rem;
+`;

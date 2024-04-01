@@ -1,6 +1,8 @@
 import EvolucaoPagina from "./Evolução/EvolucaoPagina.tsx";
-import {BarNavegationProps} from "../../Site/BarNavegation.tsx";
-import {RotasProps} from "../../../util/Interfaces.tsx";
+import ContasPagina from "./Contas/ContasPagina.tsx";
+import MoedasPagina from "./Moedas/MoedasPagina.tsx";
+import CentrosDeCustoPagina from "./Centros de Custo/CentrosDeCustoPagina.tsx";
+import CartoesDeCreditoPagina from "./Cartões de Crédito/CartoesDeCreditoPagina.tsx";
 
 export const MinhaCarteira = [
     {

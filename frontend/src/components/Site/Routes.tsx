@@ -1,7 +1,11 @@
 import {HeaderNav} from "./Header";
-import {EvolucaoPagina, MinhaCarteira} from "../Pages/Minha Carteira";
+import {MinhaCarteira} from "../Pages/Minha Carteira";
 import {BarNavegation} from "./BarNavegation.tsx";
 import {ErrorPage} from "./ErrorPage.tsx";
+import {MeusControles} from "../Pages/Meus Controles";
+import {MeusRelatorios} from "../Pages/Meus Relatórios";
+import {PlanoDeContas} from "../Pages/Plano de Contas";
+import {Suporte} from "../Pages/Suporte";
 export const Header= {
     path: "/",
     element: <HeaderNav />,
@@ -9,23 +13,23 @@ export const Header= {
     children: [
         {
             path: "minha-carteira",
-            element: <BarNavegation {...MinhaCarteira} />,
+            element: <BarNavegation itensPagina={MinhaCarteira} />,
         },
         {
             path: "meus-controles",
-            element: <div>Some lek</div>
+            element: <BarNavegation itensPagina={MeusControles} />,
         },
         {
             path: "meus-relatorios",
-            element: <div>Some lek</div>
+            element: <BarNavegation itensPagina={MeusRelatorios} />,
         },
         {
             path: "plano-de-contas",
-            element: <div>Some lek</div>
+            element: <BarNavegation itensPagina={PlanoDeContas} />,
         },
         {
             path: "suporte",
-            element: <div>Some lek</div>
+            element: <BarNavegation itensPagina={Suporte} />,
         },
     ],
 };
